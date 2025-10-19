@@ -20,7 +20,9 @@ from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 # ======= НАСТРОЙКИ =======
-API_TOKEN = "7376516944:AAHzTEhTfMAmxT5u6dxwsnSK1Kn5zojNauI"  # <— ВСТАВЬТЕ ТОКЕН @BotFather
+API_TOKEN = "import os
+API_TOKEN = os.getenv("API_TOKEN")
+"  # <— ВСТАВЬТЕ ТОКЕН @BotFather
 DATA_FILE = "workouts.json"
 PROGRAM = "Full Body"
 SETS_PER_EXERCISE = 5  # строго 5 подходов как вы просили
@@ -286,3 +288,4 @@ if __name__ == "__main__":
     ensure_structure()
     print("✅ Бот запущен. Нажмите Ctrl+C для остановки.")
     executor.start_polling(dp, skip_updates=True)
+
